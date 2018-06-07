@@ -25,14 +25,14 @@ It uses PostgreSQL database (checked with PostgreSQL 9.5.12).
   sudo -u postgres createdb <somename>
   sudo -u postgres psql
   ```
-      In psql write the following queries:
+5. In psql write the following queries:
   ```
   ALTER ROLE <somename> WITH PASSWORD '<db_password>';
   GRANT ALL PRIVILEGES ON DATABASE <somename> TO <somename>;
   \q
   ```
-5. Fill the config file with your data **(config/prod.yaml)**.
-6. Run the script **init_db.py** and then use **data.sql** file to load structure and data to launch the project:
+6. Fill the config file with your data **(config/prod.yaml)**.
+7. Run the script **init_db.py** and then use **data.sql** file to load structure and data to launch the project:
   ```
   python init_db.py
   sudo -u <somename> psql <somename> < data.sql
